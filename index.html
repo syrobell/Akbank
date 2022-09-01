@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akbank Case</title>
+</head>
+
+<body>
+    <input type="number" id="inputNum">
+    <button id="btn">Submit</button>
+
+    <script>
+        //Creating Odd or Even Function
+        oddOrEven = (numberFromInput) => {
+                // Creating new variable to store as string the coming number from the input 
+                let number = numberFromInput.toString();
+                let sum = 0;
+                // Looping through the number and adding the digits to the sum
+                for (let i = 0; i < number.length; i++) {
+                    sum += parseInt(number[i]);
+
+                }
+                // Returning the result from function
+                if (sum % 2 === 1) {
+                    return "odd"
+                } else {
+                    return "even"
+                }
+            }
+            //Creating the button click event
+        let button = document.getElementById("btn").addEventListener("click", function() {
+            //Creating new variable to store the value of the input
+            let input = document.getElementById("inputNum").value;
+            //Creating new variable to store the result of the function
+            let result = oddOrEven(input);
+            alert(result);
+        });
+    </script>
+</body>
+
+</html>
